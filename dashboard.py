@@ -134,7 +134,6 @@ chart3.altair_chart(pie_chart, use_container_width=True)
 # treemap.update_traces(hovertemplate='Number of complaints: %{value}')
 # treemap.update_traces(textinfo="label+value")
 # chart4.plotly_chart(treemap,use_container_width=True, )
-
 # Define the treemap_data based on your grouped data
 treemap_data = filtered_df.groupby(['issue', 'sub_issue'], as_index=False)['complaint_id'].sum()
 
