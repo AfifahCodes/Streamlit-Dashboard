@@ -1,8 +1,9 @@
-!pip install plotly
-import requests
-import json
-import pandas as pd
-import altair as alt
-import streamlit as st
-import plotly.express as px
+plotly
+python-dotenv
+plotly-express
+requests
+json
+pandas 
+altair 
+streamlit 
 from googleapiclient.discovery import build
