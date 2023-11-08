@@ -135,4 +135,6 @@ treemap.update_traces(hovertemplate='Number of complaints: %{value}')
 treemap.update_traces(textinfo="label+value")
 chart4.plotly_chart(treemap,use_container_width=True, )
 
+
+
 st.markdown("By Afifah Luqman")
