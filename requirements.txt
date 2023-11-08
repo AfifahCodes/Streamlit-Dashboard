@@ -1,4 +1,4 @@
 plotly==5.3.1
 plotly-express
-
+google-api-python-client
 
