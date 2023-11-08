@@ -126,14 +126,33 @@ pie_chart = alt.Chart(chart_data).mark_arc().encode(
 chart3.altair_chart(pie_chart, use_container_width=True)
 
 
-treemap_data = filtered_df.groupby(['issue','sub_issue'])['complaint_id'].sum().reset_index()
-treemap = px.treemap(treemap_data, path=['issue', 'sub_issue'], values='complaint_id', title='Complaints by Issue and Sub-Issue')
-treemap.update_layout(
+# treemap_data = filtered_df.groupby(['issue','sub_issue'])['complaint_id'].sum().reset_index()
+# treemap = px.treemap(treemap_data, path=['issue', 'sub_issue'], values='complaint_id', title='Complaints by Issue and Sub-Issue')
+# treemap.update_layout(
+#     title='Complaints by Issue and Sub-Issue'
+#     )
+# treemap.update_traces(hovertemplate='Number of complaints: %{value}')
+# treemap.update_traces(textinfo="label+value")
+# chart4.plotly_chart(treemap,use_container_width=True, )
+
+# Define the treemap_data based on your grouped data
+treemap_data = filtered_df.groupby(['issue', 'sub_issue'], as_index=False)['complaint_id'].sum()
+
+# Create the treemap chart using Plotly Express
+treemap = px.treemap(
+    treemap_data,
+    path=['issue', 'sub_issue'],
+    values='complaint_id',
     title='Complaints by Issue and Sub-Issue'
-    )
+)
+
+# Configure the layout and tooltips
+treemap.update_layout(title='Complaints by Issue and Sub-Issue')
 treemap.update_traces(hovertemplate='Number of complaints: %{value}')
 treemap.update_traces(textinfo="label+value")
-chart4.plotly_chart(treemap,use_container_width=True, )
+
+# Render the treemap chart using plotly_chart
+st.plotly_chart(treemap, use_container_width=True)
 
 
 
