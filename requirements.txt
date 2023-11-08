@@ -1,9 +1,5 @@
 plotly==5.3.1
 python-dotenv
 plotly-express
-requests
-json
-pandas 
-altair 
-streamlit 
+
 
